@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap');
+
+body {
+  background-color: #08090c;
+  color: #e0e0e0;
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* CARTE PRINCIPALE ET RESPONSIVE */
+#carte-to-export {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  background: linear-gradient(145deg, #12141d, #08090c);
+  border: 2px solid #00d4ff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
+  box-sizing: border-box;
+}
+
+.header {
+  text-align: center;
+  border-bottom: 1px solid rgba(0, 212, 255, 0.4);
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  font-family: 'Cinzel', serif;
+  font-size: 20px;
+  color: #fff;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  word-break: break-word;
+  outline: none;
+}
+
+.header span {
+  font-size: 10px;
+  color: #00d4ff;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+/* CADRAN ILLUSTRATION */
+.illustration-wrapper {
+  margin-bottom: 15px;
+}
+
+.illustration-wrapper.hidden {
+  display: none;
+}
+
+.illustration-box {
+  width: 100%;
+  max-height: 250px;
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.illustration-box img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+/* GRILLE D'INFORMATIONS DU HAUT */
+.grid-info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.field-box {
+  background: rgba(255, 255, 255, 0.03);
+  border-left: 2px solid #00d4ff;
+  padding: 8px 10px;
+  border-radius: 0 4px 4px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-size: 10px;
+  color: #00d4ff;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.value-input {
+  width: 100%;
+  min-height: 22px;
+  height: auto;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+  outline: none;
+  box-sizing: border-box;
+  word-break: break-word;
+  white-space: pre-wrap;
+}
+
+.section-title {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  color: #00d4ff;
+  margin: 15px 0 6px 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ZONES DE TEXTE GRANDES */
+.large-box {
+  width: 100%;
+  min-height: 50px;
+  height: auto;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  border-radius: 6px;
+  padding: 10px;
+  color: #e0e0e0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  line-height: 1.5;
+  box-sizing: border-box;
+  outline: none;
+  word-break: break-word;
+  white-space: pre-wrap;
+}
+
+/* Placeholders pour éléments contenteditable */
+.value-input:empty:before,
+.large-box:empty:before,
+.header h1:empty:before {
+  content: attr(data-placeholder);
+  color: #555;
+}
+
+/* SIGNATURE EN POLICE GREAT VIBES */
+.signature-box {
+  font-family: 'Great Vibes', cursive;
+  font-size: 24px;
+  color: #00d4ff;
+  text-align: right;
+  margin-top: 20px;
+  padding-top: 10px;
+  border-top: 1px dashed rgba(0, 212, 255, 0.2);
+}
+
+/* PANNEAU DE CONTRÔLE HORS CARTE (RESPONSIVE) */
+.control-panel {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  width: 100%;
+  max-width: 500px;
+  justify-content: center;
+}
+
+.btn-export, .btn-upload {
+  flex: 1;
+  text-align: center;
+  padding: 12px 15px;
+  background: #00d4ff;
+  color: #08090c;
+  font-family: 'Cinzel', serif;
+  font-weight: 800;
+  font-size: 11px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
+}
+
+.btn-upload input[type="file"] {
+  display: none;
+}
+
+.btn-export:hover, .btn-upload:hover {
+  background: #fff;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.8);
+}
+
+/* MEDIA QUERIES SMARTPHONE */
+@media screen and (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  #carte-to-export {
+    padding: 15px;
+  }
+
+  .grid-info {
+    grid-template-columns: 1fr;
+  }
+
+  .header h1 {
+    font-size: 16px;
+  }
+}

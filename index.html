@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Générateur de Carte Technique</title>
+  
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- html2canvas pour la capture JPG -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+
+  <!-- CONTENEUR PRINCIPAL (CARTE) -->
+  <div id="carte-to-export">
+    <div class="header">
+      <span>💦Rp Tensei🍃</span>
+      <!-- Le titre est directement éditable -->
+      <h1 id="title-display" contenteditable="true" data-placeholder="Carte Technique">Carte Technique</h1>
+    </div>
+
+    <!-- ZONE ILLUSTRATION -->
+    <div id="illustration-wrapper" class="illustration-wrapper hidden">
+      <div class="section-title">Illustration</div>
+      <div class="illustration-box">
+        <img id="img-preview" src="" alt="Illustration de la technique">
+      </div>
+    </div>
+
+    <!-- GRILLE D'INFORMATIONS -->
+    <div class="grid-info">
+      <div class="field-box">
+        <span class="label">Propriétaire</span>
+        <div class="value-input" contenteditable="true" data-placeholder="Arigaki Momoshiki"></div>
+      </div>
+      <div class="field-box">
+        <span class="label">Nom</span>
+        <div class="value-input" contenteditable="true" data-placeholder="Nom de la technique"></div>
+      </div>
+      <div class="field-box">
+        <span class="label">Exps</span>
+        <div class="value-input" contenteditable="true" data-placeholder="Ex: 500 EXPs"></div>
+      </div>
+      <div class="field-box">
+        <span class="label">Catégories</span>
+        <div class="value-input" contenteditable="true" data-placeholder="Ex: Taijutsu / Ki"></div>
+      </div>
+      <div class="field-box">
+        <span class="label">Consommation</span>
+        <div class="value-input" contenteditable="true" data-placeholder="Ex: Forte"></div>
+      </div>
+      <div class="field-box">
+        <span class="label">Durée</span>
+        <div class="value-input" contenteditable="true" data-placeholder="Ex: 12 secondes"></div>
+      </div>
+    </div>
+
+    <!-- DESCRIPTIONS -->
+    <div class="section-title">Descriptions</div>
+    <div class="large-box" contenteditable="true" data-placeholder="Décrivez l'exécution de la technique..."></div>
+
+    <!-- EFFETS -->
+    <div class="section-title">Effets</div>
+    <div class="large-box" contenteditable="true" data-placeholder="Détaillez les effets et dégâts..."></div>
+
+    <!-- ANNEXES -->
+    <div class="section-title">Annexes</div>
+    <div class="large-box" contenteditable="true" data-placeholder="Notes secondaires, conditions requises, contrecoups..."></div>
+
+    <!-- SIGNATURE EN BAS DE FICHE -->
+    <div class="signature-box">
+      Réalisé par Momoshiki
+    </div>
+  </div>
+
+  <!-- PANNEAU DE CONTRÔLE HORS CARTE -->
+  <div class="control-panel">
+    <label class="btn-upload">
+      🖼️ Illustration
+      <input type="file" id="image-input" accept="image/*">
+    </label>
+    <button id="btn-export" class="btn-export">📥 Télécharger (JPG)</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
